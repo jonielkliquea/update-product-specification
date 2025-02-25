@@ -1,2 +1,3 @@
-# update-product-specification
-crea especificación y asociar al producto
+> [!NOTE]
+> Utilizar con cuidado este puede modificar informacion inportate o sencible
+
