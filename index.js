@@ -18,15 +18,15 @@ const processData = async () => {
     const SkuId = row["Sku Id"];
     const payload1 = {
       FieldName: row["Field name"],
-      GroupName: row["Field name"] + "s",
+      GroupName: "Especificaciones generales",
       RootLevelSpecification: true,
       FieldValues: [row["Field values"]],
     };
 
-console.log(processData);
+console.log(payload1);
 
     try {
-      const response1 = await axios.patch(`${urlBase}${SkuId}/specificationvalue`, payload1, {
+      const response1 = await axios.put(`${urlBase}${SkuId}/specificationvalue`, payload1, {
         headers: {
           "Content-Type": "application/json",
         //   "X-VTEX-API-AppKey": "vtexappkey-kliqueainternacional-CTARQF",
@@ -47,7 +47,7 @@ console.log(processData);
           Text: item.Text,
         };
 
-        const response2 = await axios.patch(`${urlBase}${SkuId}/specification`, payload2, {
+        const response2 = await axios.put(`${urlBase}${SkuId}/specification`, payload2, {
           headers: {
             "Content-Type": "application/json",
         //     "X-VTEX-API-AppKey": "vtexappkey-kliqueainternacional-CTARQF",
